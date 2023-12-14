@@ -52,7 +52,7 @@
      Gestion des résultats : Le shell gère les résultats ou les erreurs.
      Retour à l'invite de commande ou Terminaison du Shell : En mode interactif, retour à l'invite de commande, sinon terminaison du shell.
 
-     ![Logo](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
+     ![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
 
 ## Authors
 
