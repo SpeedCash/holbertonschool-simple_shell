@@ -1,5 +1,7 @@
 # Introduction
 
+![Logo](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell.jpg)
+
 ## Qu'est-ce que Shell
     • Shell est un interpréteur de ligne de commande offrant une interface utilisateur pour accéder aux services du système d'exploitation. Ce projet concerne le développement d'un programme shell de type sh (Bourne Shell), utilisé typiquement via un émulateur de terminal.
 
@@ -41,6 +43,16 @@
 
 ## Flowchart
     • Image illustrant le diagramme de flux du projet.
+
+     Démarrage du Shell : Initialisation de l'environnement.
+     Affichage de l'invite de commande : En mode interactif, le shell affiche une invite.
+     Lecture de la commande : Le shell lit la ligne de commande saisie par l'utilisateur.
+     Analyse de la commande : Identification de la commande et des arguments.
+     Exécution de la commande : Soit une commande intégrée, soit une commande externe.
+     Gestion des résultats : Le shell gère les résultats ou les erreurs.
+     Retour à l'invite de commande ou Terminaison du Shell : En mode interactif, retour à l'invite de commande, sinon terminaison du shell.
+
+     ![Logo](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
 
 ## Authors
 
