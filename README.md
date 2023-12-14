@@ -56,5 +56,5 @@
 
 ## Authors
 
-- [@Philippe MARLCLAY](https://github.com/PhMLakeofGeneva)
+- [@Philippe MARCLAY](https://github.com/PhMLakeofGeneva)
 - [@Thierry CRAVERO](https://github.com/SpeedCash)
