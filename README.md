@@ -30,6 +30,9 @@
 ## Fonctions autorisées
     • Liste des fonctions autorisées comme execve, exit, fork, malloc, write, etc.
 
+## Lien de compilation
+    • gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
 # Documentation
 
 ## Installation
