@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
-
+#include "shell.h"
 /**
  * main - execve example
  *
  * Return: Always 0.
  */
-int main(void)
+int execute_command(void)
 {
     char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 

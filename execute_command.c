@@ -2,13 +2,13 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-
+#include "shell.h"
 /**
  * main - fork & wait example
  *
  * Return: Always 0.
  */
-int main(void)
+int process(void)
 {
     pid_t child_pid;
     int status;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+#include "shell.h"
 /**
  * main - Entry point for the shell
  * @ac: Argument count
@@ -42,7 +42,15 @@ int main(int ac, char **av)
 		{
 			break;
 		}
-
+		if (strcmp(line, "env") == 0)
+		{
+			int i = 0;
+			char **env = environ;
+			for (i = 0; env[i] != NULL; i++)
+    {
+        printf("%s\n", env[i]);
+    }
+		}
 		free(line);
 		line = NULL;
 		len = 0;
