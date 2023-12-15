@@ -52,10 +52,14 @@
      Gestion des résultats : Le shell gère les résultats ou les erreurs.
      Retour à l'invite de commande ou Terminaison du Shell : En mode interactif, retour à l'invite de commande, sinon terminaison du shell.
 
+<<<<<<< HEAD
 <img src="https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg">
          <alt="Flowchart">
+=======
+![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
+>>>>>>> 2d9d844b4b3bc585fb31ec3f6bf9da90158d8d17
 
 ## Authors
 
-- [@Philippe MARLCLAY](https://github.com/PhMLakeofGeneva)
+- [@Philippe MARCLAY](https://github.com/PhMLakeofGeneva)
 - [@Thierry CRAVERO](https://github.com/SpeedCash)
