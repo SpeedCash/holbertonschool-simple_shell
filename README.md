@@ -1,45 +1,46 @@
+
 # Introduction
 
 ![Logo](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell.jpg)
 
-## Qu'est-ce que Shell
-	• Shell est un interpréteur de ligne de commande offrant une interface utilisateur pour accéder aux services du système d'exploitation. Ce projet concerne le développement d'un programme shell de type sh (Bourne Shell), utilisé typiquement via un émulateur de terminal.
+## What is Shell
+	• Shell is a command-line interpreter providing a user interface to access the operating system's services. This project involves the development of a sh-type shell program (Bourne Shell), typically used through a terminal emulator.
 
-## À quoi ça sert
-	• Le shell permet d'interpréter des commandes. Il intègre des fonctionnalités comme le contrôle de processus, la redirection d'entrée/sortie, et sert à écrire des programmes batch ou scripts. Les systèmes de type Unix ont tous au moins un interpréteur compatible avec le Bourne shell.
+## What is it for
+	• The shell interprets commands. It incorporates features such as process control, input/output redirection, and is used to write batch programs or scripts. Unix-like systems all have at least one Bourne shell-compatible interpreter.
 
-## Informations sur le Projet
+## Project Information
 
-## Tâches
-	• Plusieurs tâches sont listées, de la création de README et manuel jusqu'à l'implémentation de diverses versions du shell.
+## Tasks
+	• Several tasks are listed, from creating README and manual to implementing various versions of the shell.
 
-## Environnement
-	• OS : Ubuntu 20.04 LTS
-	• Langage : C
-	• Compilateur : gcc 9.3.0
-	• Éditeur : VIM 8.1.2269
-	• Contrôle de version : Git
-	• Style : Betty style
+## Environment
+	• OS: Ubuntu 20.04 LTS
+	• Language: C
+	• Compiler: gcc 9.3.0
+	• Editor: VIM 8.1.2269
+	• Version control: Git
+	• Style: Betty style
 
-## Exigences Générales
-	• Utilisation des éditeurs vi, vim, emacs
-	• Compilation sur Ubuntu 14.04 LTS avec gcc 4.8.4
-	• Respect du style Betty, sans fuites de mémoire
-	• Sortie identique à celle de sh (/bin/sh)
+## General Requirements
+	• Use of vi, vim, emacs editors
+	• Compilation on Ubuntu 14.04 LTS with gcc 4.8.4
+	• Compliance with Betty style, without memory leaks
+	• Output identical to sh (/bin/sh)
 
-## Fonctions autorisées
-	• Liste des fonctions autorisées comme execve, exit, fork, malloc, write, etc.
+## Authorized Functions
+	• List of authorized functions such as execve, exit, fork, malloc, write, etc.
 
-## Lien de compilation
+## Compilation Link
 	• gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 # Documentation
 
 ## Installation
-	• Instructions pour cloner le dépôt, changer de répertoire, compiler, et exécuter le shell en mode interactif ou non-interactif.
+	• Instructions for cloning the repository, changing directories, compiling, and running the shell in interactive or non-interactive mode.
 
 ## Tests
-	• Exemple d'exécution et de sortie après compilation.
+	• Example of execution and output after compilation.
 
 	$ ./hsh
 	($) /bin/ls
@@ -60,25 +61,25 @@
 	hsh main.c shell.c test_ls_2
 	$
 
-## Fichiers
-	• Description et liens vers différents fichiers du projet, comme le manuel, les scripts, et les fichiers de code source.
+## Files
+	• Description and links to different project files, such as the manual, scripts, and source code files.
 
 ## Flowchart
-	• Image illustrant le diagramme de flux du projet.
+	• Image illustrating the flowchart of the project.
 
-	 Démarrage du Shell : Initialisation de l'environnement.
-	 Affichage de l'invite de commande : En mode interactif, le shell affiche une invite.
-	 Lecture de la commande : Le shell lit la ligne de commande saisie par l'utilisateur.
-	 Analyse de la commande : Identification de la commande et des arguments.
-	 Exécution de la commande : Soit une commande intégrée, soit une commande externe.
-	 Gestion des résultats : Le shell gère les résultats ou les erreurs.
-	 Retour à l'invite de commande ou Terminaison du Shell : En mode interactif, retour à l'invite de commande, sinon terminaison du shell.
+	Shell Start: Initializing the environment.
+	Displaying the Command Prompt: In interactive mode, the shell displays a prompt.
+	Reading the Command: The shell reads the command line entered by the user.
+	Analyzing the Command: Identification of the command and arguments.
+	Executing the Command: Either a built-in command or an external command.
+	Managing Results: The shell handles results or errors.
+	Return to Command Prompt or Shell Termination: In interactive mode, return to the command prompt, otherwise termination of the shell.
 
 <img src="https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg">
-		 <alt="Flowchart">
+	 <alt="Flowchart">
 ![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
 =======
-         <alt="Flowchart">
+	 <alt="Flowchart">
 
 ## Authors
 
