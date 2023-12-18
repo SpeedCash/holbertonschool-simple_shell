@@ -1,4 +1,4 @@
-.TH man simple_shell "18 December 2023" "1.0" "Manuel de Simple Shell"
+.TH man simple_shell "18 December 2023"
 .SH NOM
 .B shell - interpréteur de commandes
 
