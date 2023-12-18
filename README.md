@@ -75,11 +75,7 @@
 	Managing Results: The shell handles results or errors.
 	Return to Command Prompt or Shell Termination: In interactive mode, return to the command prompt, otherwise termination of the shell.
 
-<img src="https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg">
-	 <alt="Flowchart">
-![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
-=======
-	 <alt="Flowchart">
+<a href="https://zupimages.net/viewer.php?id=23/51/cepx.png"><img src="https://zupimages.net/up/23/51/cepx.png" alt="" /></a>
 
 ## Authors
 
