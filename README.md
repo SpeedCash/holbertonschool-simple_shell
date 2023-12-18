@@ -39,7 +39,6 @@
 	• Instructions pour cloner le dépôt, changer de répertoire, compiler, et exécuter le shell en mode interactif ou non-interactif.
 
 ## Tests
-<<<<<<< HEAD
 	• Exemple d'exécution et de sortie après compilation.
 
 	``` $ ./hsh
@@ -62,7 +61,6 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 
-=======
     • Exemple d'exécution et de sortie après compilation.
     $ ./hsh
 ($) /bin/ls
@@ -70,7 +68,6 @@ hsh main.c shell.c
 ($)
 ($) exit
 $
->>>>>>> a59c337bca3089bd48bb5c2ca4227a4098f42d5e
 
 ## Fichiers
 	• Description et liens vers différents fichiers du projet, comme le manuel, les scripts, et les fichiers de code source.
@@ -87,14 +84,10 @@ $
 	 Retour à l'invite de commande ou Terminaison du Shell : En mode interactif, retour à l'invite de commande, sinon terminaison du shell.
 
 <img src="https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg">
-<<<<<<< HEAD
 		 <alt="Flowchart">
-=======
 ![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
->>>>>>> 2d9d844b4b3bc585fb31ec3f6bf9da90158d8d17
 =======
          <alt="Flowchart">
->>>>>>> a59c337bca3089bd48bb5c2ca4227a4098f42d5e
 
 ## Authors
 
