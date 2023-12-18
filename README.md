@@ -40,6 +40,12 @@
 
 ## Tests
     • Exemple d'exécution et de sortie après compilation.
+    $ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
 
 ## Fichiers
     • Description et liens vers différents fichiers du projet, comme le manuel, les scripts, et les fichiers de code source.
