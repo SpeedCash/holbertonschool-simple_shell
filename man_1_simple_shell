@@ -1,40 +1,39 @@
 .TH man simple_shell "18 December 2023"
-.SH NOM
-.B shell - interpréteur de commandes
+.SH NAME
+.B shell - command interpreter
 
 .SH SYNOPSIS
 .B ./hsh
 
-.SS Syntaxe
-L'interpréteur shell fonctionne en exécutant les commandes entrées par l'utilisateur. La syntaxe des commandes du shell est la suivante :
+.SS Syntax
+The shell interpreter works by executing commands entered by the user. The syntax for shell commands is as follows:
 
 .B #cisfun$
-.I <commande> <options ou drapeaux> <argument 1> <argument 2> ...
+.I <command> <options or flags> <argument 1> <argument 2> ...
 
 .SH DESCRIPTION
 
-Il s'agit d'un interpréteur de commandes UNIX simple. Simple_shell est un interpréteur de langage de commande compatible avec sh qui exécute des commandes lues à partir de l'entrée standard ou d'un fichier.
+This is a simple UNIX command interpreter. Simple_shell is a sh-compatible command language interpreter that executes commands read from standard input or a file.
 
-.SS Aperçu
-Un shell Unix est un interpréteur de ligne de commande qui fournit une interface utilisateur en ligne de commande pour les systèmes d'exploitation de type Unix. Le shell est à la fois un langage de commande interactif et un langage de script, utilisé par le système d'exploitation pour contrôler l'exécution du système via des scripts shell.
+.SS Overview
+A Unix shell is a command-line interpreter that provides a command-line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language, used by the operating system to control system execution through shell scripts.
 
-.SS Recherche de chemin
-Lors de la saisie d'une commande, le shell vérifie d'abord s'il possède une commande intégrée de ce nom. Si une correspondance est trouvée dans le PATH de la variable d'environnement (env), alors la commande du prompt est ajoutée au répertoire PATH et le chemin complet est retourné. Si aucune correspondance n'est trouvée, une erreur est affichée.
+.SS Path Searching
+When entering a command, the shell first checks if it has a built-in command of that name. If a match is found in the PATH of the environment variable (env), then the prompt's command is added to the PATH directory and the full path is returned. If no match is found, an error is displayed.
 
 .SH COMPILATION
-Tous les fichiers seront compilés avec les drapeaux gcc
+All files will be compiled with gcc flags
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
-.SH VALEUR DE RETOUR
-Le shell renvoie zéro (0), sauf si un code de sortie est spécifié.
+.SH RETURN VALUE
+The shell returns zero (0), unless an exit code is specified.
 
-.SH EXEMPLE
-Voici quelques exemples d'utilisation du shell
+.SH EXAMPLE
+Here are some examples of using the shell
 
 =========================================
-.SS Mode interactif
-
+.SS Interactive Mode
 
   $ ./hsh
  ($) /bin/ls
@@ -44,8 +43,7 @@ Voici quelques exemples d'utilisation du shell
   $
 =========================================
 
-.SS Mode non-interactif
-
+.SS Non-Interactive Mode
 
   $ echo "/bin/ls" | ./hsh
   hsh main.c shell.c test_ls_2
@@ -61,15 +59,15 @@ Voici quelques exemples d'utilisation du shell
 =========================================
 
 .SH NOTES
-- Ce projet est basé sur le shell Unix pour l'école Holberton.
+- This project is based on the Unix shell for Holberton School.
 
-.SH VOIR AUSSI
+.SH SEE ALSO
 .B SH(1)
 
 .SH BUGS
-Aucun bug connu.
+No known bugs.
 
-.SH AUTEURS
+.SH AUTHORS
 
 Philippe Marclay
     https://github.com/PhMLakeofGeneva
