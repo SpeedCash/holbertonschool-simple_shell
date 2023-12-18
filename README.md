@@ -49,18 +49,18 @@
 	$
 	```
 
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
 
-	$ echo "/bin/ls" | ./hsh
-	hsh main.c shell.c test_ls_2
-	$
-	$ cat test_ls_2
-	/bin/ls
-	/bin/ls
-	$
-	$ cat test_ls_2 | ./hsh
-	hsh main.c shell.c test_ls_2
-	hsh main.c shell.c test_ls_2
-	$
 
 ## Fichiers
 	• Description et liens vers différents fichiers du projet, comme le manuel, les scripts, et les fichiers de code source.
