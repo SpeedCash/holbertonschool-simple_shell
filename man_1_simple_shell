@@ -1,0 +1,78 @@
+.TH man simple_shell "18 December 2023" "1.0" "Manuel de Simple Shell"
+.SH NOM
+.B shell - interpréteur de commandes
+
+.SH SYNOPSIS
+.B ./hsh
+
+.SS Syntaxe
+L'interpréteur shell fonctionne en exécutant les commandes entrées par l'utilisateur. La syntaxe des commandes du shell est la suivante :
+
+.B #cisfun$
+.I <commande> <options ou drapeaux> <argument 1> <argument 2> ...
+
+.SH DESCRIPTION
+
+Il s'agit d'un interpréteur de commandes UNIX simple. Simple_shell est un interpréteur de langage de commande compatible avec sh qui exécute des commandes lues à partir de l'entrée standard ou d'un fichier.
+
+.SS Aperçu
+Un shell Unix est un interpréteur de ligne de commande qui fournit une interface utilisateur en ligne de commande pour les systèmes d'exploitation de type Unix. Le shell est à la fois un langage de commande interactif et un langage de script, utilisé par le système d'exploitation pour contrôler l'exécution du système via des scripts shell.
+
+.SS Recherche de chemin
+Lors de la saisie d'une commande, le shell vérifie d'abord s'il possède une commande intégrée de ce nom. Si une correspondance est trouvée dans le PATH de la variable d'environnement (env), alors la commande du prompt est ajoutée au répertoire PATH et le chemin complet est retourné. Si aucune correspondance n'est trouvée, une erreur est affichée.
+
+.SH COMPILATION
+Tous les fichiers seront compilés avec les drapeaux gcc
+
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+.SH VALEUR DE RETOUR
+Le shell renvoie zéro (0), sauf si un code de sortie est spécifié.
+
+.SH EXEMPLE
+Voici quelques exemples d'utilisation du shell
+
+=========================================
+.SS Mode interactif
+
+
+  $ ./hsh
+ ($) /bin/ls
+ hsh main.c shell.c
+ ($)
+ ($) exit
+  $
+=========================================
+
+.SS Mode non-interactif
+
+
+  $ echo "/bin/ls" | ./hsh
+  hsh main.c shell.c test_ls_2
+  $
+  $ cat test_ls_2
+  /bin/ls
+  /bin/ls
+  $
+  $ cat test_ls_2 | ./hsh
+  hsh main.c shell.c test_ls_2
+  hsh main.c shell.c test_ls_2
+  $
+=========================================
+
+.SH NOTES
+- Ce projet est basé sur le shell Unix pour l'école Holberton.
+
+.SH VOIR AUSSI
+.B SH(1)
+
+.SH BUGS
+Aucun bug connu.
+
+.SH AUTEURS
+
+Philippe Marclay
+    https://github.com/PhMLakeofGeneva
+
+Thierry Cravero
+    https://github.com/SpeedCash
