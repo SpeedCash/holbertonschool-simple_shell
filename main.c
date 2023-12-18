@@ -1,59 +1,82 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-#include "shell.h"
-/**
- * main - Entry point for the shell
- * @ac: Argument count
- * @av: Argument vector
- *
- * Return: 0 on success, 1 on error
- */
 
-int main(int ac, char **av)
+#define BUFFER_SIZE 1024
+
+ssize_t custom_getline(char **lineptr, size_t *n, FILE *stream)
+{
+	size_t pos = 0;
+	int c;
+
+	if (lineptr == NULL || stream == NULL || n == NULL)
+	{
+		return (-1);
+	}
+
+	if (*lineptr == NULL)
+	{
+		*lineptr = malloc(BUFFER_SIZE);
+		if (*lineptr == NULL)
+		{
+			return (-1);
+		}
+		*n = BUFFER_SIZE;
+	}
+
+	while ((c = fgetc(stream)) != EOF)
+	{
+		if (pos >= *n - 1)
+		{
+			size_t new_size = *n + BUFFER_SIZE;
+			char *new_ptr = realloc(*lineptr, new_size);
+			if (new_ptr == NULL)
+			{
+				return (-1);
+			}
+			*n = new_size;
+			*lineptr = new_ptr;
+		}
+
+		(*lineptr)[pos++] = (char)c;
+
+		if (c == '\n')
+		{
+			break;
+		}
+	}
+
+	(*lineptr)[pos] = '\0';
+
+	if (pos == 0 && c == EOF)
+	{
+		return (-1);
+	}
+
+	return pos;
+}
+
+int main(void)
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t read;
 
-	(void)ac;
-	(void)av;
+	while (1) {
+		printf("$ ");
+		read = custom_getline(&line, &len, stdin);
 
-	while (1)
-	{
-		if (isatty(STDIN_FILENO))
-		{
-			printf("$ ");
-		}
-
-		read = getline(&line, &len, stdin);
 		if (read == -1)
 		{
-			if (isatty(STDIN_FILENO))
-			{
-				printf("\n");
-			}
 			break;
 		}
 
-		line[strcspn(line, "\n")] = 0;
-		if (strcmp(line, "exit") == 0)
+		if (strcmp(line, "exit\n") == 0)
 		{
 			break;
 		}
-		if (strcmp(line, "env") == 0)
-		{
-			int i = 0;
-			char **env = environ;
-			for (i = 0; env[i] != NULL; i++)
-    {
-        printf("%s\n", env[i]);
-    }
-		}
-		free(line);
-		line = NULL;
-		len = 0;
+
+		system(line);
 	}
 
 	free(line);
