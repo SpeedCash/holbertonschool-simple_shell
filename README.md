@@ -77,9 +77,6 @@
 
 <img src="https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg">
 	 <alt="Flowchart">
-![img](https://cravero-consulting.com/wp-content/uploads/2023/12/simple_shell_flowchart-scaled.jpg)
-=======
-	 <alt="Flowchart">
 
 ## Authors
 
