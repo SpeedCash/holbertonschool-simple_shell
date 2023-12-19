@@ -11,11 +11,15 @@
 
 extern char **environ;
 
+int wait(void);
+int stat(int ac, char **av);
+int pid(void);
+
+
 int process(void);
 int execute_command(void);
 int fork(void);
 int get_env();
-
 int ctrld(char **args);
 int cd(char **args);
 int help(char **args);
@@ -23,7 +27,6 @@ extern char **environ;
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _putchar(char c);
-
 char *_get_path(char **env);
 int _values_path(char **arg, char **env);
 char *_getline_command(void);
