@@ -11,11 +11,10 @@
 
 extern char **environ;
 
-int wait(void);
-int stat(int ac, char **av);
-int pid(void);
+/*int wait(void);*/
 
 
+int custum(int ac, char **av, char **env);
 int process(void);
 int execute_command(void);
 int fork(void);

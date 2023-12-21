@@ -1,56 +1,53 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+
 #include "shell.h"
 
-/**
- * main - Entry point for simple shell
- * @argc: Argument count
- * @argv: Argument vector
- * @envp: Environment variables
- *
- * Return: Always 0 on success
- */
-int main(int argc, char **argv, char **envp)
+int main(int ac, char **av)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t read;
-	int is_interactive = isatty(STDIN_FILENO);
+	int read = 0;
 
-	(void)argc;
-	(void)argv;
-	(void)envp;
-
+	(void)ac;
+	(void)av;
 	while (1)
 	{
-		if (is_interactive)
+		if (isatty(STDIN_FILENO))
 		{
 			printf("$ ");
 		}
-
 		read = getline(&line, &len, stdin);
 		if (read == -1)
 		{
-			if (is_interactive)
+			if (isatty(STDIN_FILENO))
 			{
 				printf("\n");
 			}
 			break;
 		}
-
 		line[strcspn(line, "\n")] = 0;
 		if (strcmp(line, "exit") == 0)
 		{
 			break;
 		}
 
+		if (strcmp(line, "env") == 0)
+		{
+			int i = 0;
+			char **env = environ;
+			for (i = 0; env[i] != NULL; i++)
+			{
+				printf("%s\n", env[i]);
+			}
+		}
+		
+		
 		free(line);
 		line = NULL;
 		len = 0;
 	}
-
 	free(line);
 	return (0);
 }
