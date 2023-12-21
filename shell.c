@@ -1,53 +1,58 @@
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include "main.h"
 
-#include "shell.h"
+/**
+ 	* main - Main loop, receive input from CLI, parse, and execute it
+ 	 * @argv: Array of arguments
+ 	* @argc: Number of arguments passed to the programmm
+	* Return: Always 0 on success
+ */
 
-int main(int ac, char **av)
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
-	char *line = NULL;
-	size_t len = 0;
-	int read = 0;
+	int status_return = 1, exit_status = 0;
+	ssize_t n = 0;
+	char **arguments = NULL;
+	size_t size = 0;
+	char *input_stdin = NULL;
 
-	(void)ac;
-	(void)av;
-	while (1)
+	while (status_return && n != EOF)
 	{
-		if (isatty(STDIN_FILENO))
+		size = 0;
+
+
+		status_return = isatty(STDIN_FILENO);
+		if (status_return)
+			write(STDOUT_FILENO, "dav_shell->$ ", 13);
+
+
+		n = getline(&input_stdin, &size, stdin);
+		if (n == -1)
 		{
-			printf("$ ");
-		}
-		read = getline(&line, &len, stdin);
-		if (read == -1)
-		{
-			if (isatty(STDIN_FILENO))
-			{
-				printf("\n");
-			}
-			break;
-		}
-		line[strcspn(line, "\n")] = 0;
-		if (strcmp(line, "exit") == 0)
-		{
+			free(input_stdin);
 			break;
 		}
 
-		if (strcmp(line, "env") == 0)
+
+		if (validate_spaces(input_stdin))
 		{
-			int i = 0;
-			char **env = environ;
-			for (i = 0; env[i] != NULL; i++)
-			{
-				printf("%s\n", env[i]);
-			}
+			free(input_stdin);
+			continue;
 		}
-		
-		
-		free(line);
-		line = NULL;
-		len = 0;
+
+
+		arguments = hsh_tokenizer(input_stdin);
+
+
+		if (*arguments[0] == '\0')
+			continue;
+
+
+		status_return = hsh_execute_builtins(arguments, input_stdin,
+		argv, &exit_status);
+
+		free(arguments);
+		free(input_stdin);
 	}
-	free(line);
+
 	return (0);
 }
