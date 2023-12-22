@@ -5,8 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <errno.h>
 #include <sys/wait.h>
+#include <errno.h>
+#include <unistd.h>
+#include <fcntl.h>
+
 
 #define BUFSIZE 64		/* Constant buffer size for tokenizers */
 #define DELIM_I " \t\n" /* Delimiters for the hsh_tokenizer */
@@ -30,8 +33,6 @@ int hsh_setenv(char **args, char *input_stdin, int *exit_status);
 int hsh_unsetenv(char **args, char *input_stdin, int *exit_status);
 int hsh_env(char **args, char *input_stdin, int *exit_status);
 int hsh_exit(char **args, char *input_stdin, int *exit_status);
-int main(int argc __attribute__((unused)),
-char **argv __attribute__((unused)));
 char **hsh_tokenizer(char *input);
 char **tokenizer_path(char *input);
 char *validate_input(char **arguments, char **argv);

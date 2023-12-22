@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include "shell.h"
+#include "main.h"
 
 /**
  * main - execve example

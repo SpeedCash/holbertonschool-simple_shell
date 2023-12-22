@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 #define SETOWD(V) (V = _strdup(_getenv("OLDPWD")))
 
@@ -20,7 +20,7 @@ int change_dir(sh_t *data)
 		SETOWD(data->oldpwd);
 		if (chdir(home) < 0)
 			return (FAIL);
-		return (SUCCESS);
+		return (EXIT_SUCCESS);
 	}
 	if (_strcmp(data->args[1], "-") == 0)
 	{
@@ -28,22 +28,22 @@ int change_dir(sh_t *data)
 		{
 			SETOWD(data->oldpwd);
 			if (chdir(home) < 0)
-				return (FAIL);
+				return (EXIT_FAILURE);
 		}
 		else
 		{
 			SETOWD(data->oldpwd);
 			if (chdir(data->oldpwd) < 0)
-				return (FAIL);
+				return (EXIT_FAILURE);
 		}
 	}
 	else
 	{
 		SETOWD(data->oldpwd);
 		if (chdir(data->args[1]) < 0)
-			return (FAIL);
+			return (EXIT_FAILURE);
 	}
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }
 #undef GETCWD
 /**
@@ -53,7 +53,7 @@ int change_dir(sh_t *data)
  * Return: (Success) 0 is returned
  * ------- (Fail) negative number will returned
  */
-int abort_prg(sh_t *data __attribute__((unused)))
+int abort_prg(__attribute__((unused)) sh_t *data)
 {
 	int code, i = 0;
 
@@ -67,7 +67,7 @@ int abort_prg(sh_t *data __attribute__((unused)))
 		if (_isalpha(data->args[1][i++]) < 0)
 		{
 			data->error_msg = _strdup("Illegal number\n");
-			return (FAIL);
+			return (EXIT_FAILURE);
 		}
 	}
 	code = _atoi(data->args[1]);
@@ -90,7 +90,7 @@ int display_help(sh_t *data)
 	if (fd < 0)
 	{
 		data->error_msg = _strdup("no help topics match\n");
-		return (FAIL);
+		return (EXIT_FAILURE);
 	}
 	while (rd > 0)
 	{
@@ -112,9 +112,9 @@ int display_help(sh_t *data)
  * Return: (Success) 0 is returned
  * ------- (Fail) negative number will returned
  */
-int handle_builtin(sh_t *data)
+int handle_builtin(choose_builtins_t *data)
 {
-	blt_t blt[] = {
+	choose_builtins_t blt[] = {
 		{"exit", abort_prg},
 		{"cd", change_dir},
 		{"help", display_help},
@@ -122,11 +122,11 @@ int handle_builtin(sh_t *data)
 	};
 	int i = 0;
 
-	while ((blt + i)->cmd)
+	while ((blt + i)->name_builtin)
 	{
-		if (_strcmp(data->args[0], (blt + i)->cmd) == 0)
-			return ((blt + i)->f(data));
+		if (_strcmp(blt->name_builtin[0], (blt + i)->name_builtin) == 0)
+			return ((blt + i)->func_builtin(data));
 		i++;
 	}
-	return (FAIL);
+	return (EXIT_FAILURE);
 }
