@@ -8,6 +8,7 @@
  * Return: (Success) 0 is returned
  * ------- (Fail) negative number will returned
  */
+
 int change_dir(sh_t *data)
 {
 	char *home;
