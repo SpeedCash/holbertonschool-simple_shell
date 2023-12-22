@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
 /**
  * custum - Fonction qui imprime l'environnement du système
  * @ac: Nombre d'arguments de la ligne de commande
