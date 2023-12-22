@@ -1,6 +1,7 @@
 #include "shell.h"
 
 #define SETOWD(V) (V = _strdup(_getenv("OLDPWD")))
+
 /**
  * change_dir - changes directory
  * @data: a pointer to the data structure
